@@ -12,11 +12,13 @@ class UrlsController < ApplicationController
 
 	def slow
 		sleep 1.5
+		expires_in 10.seconds, public: true
 		render :home
 	end
 
 	# 1/3 chance of returning a 500 error
 	def down
+		expires_in 10.seconds, public: true
 		if rand(1..3) == 2
 			render status: 500, json: {
 				message: "Internal Server Error"
