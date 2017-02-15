@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
 
 	# 1/3 chance of returning a 500 error
 	def down
-		expires_in 10.seconds, public: true
+		expires_in 3.seconds, public: true
 		if rand(1..3) == 2
 			render status: 500, json: {
 				message: "Internal Server Error"
