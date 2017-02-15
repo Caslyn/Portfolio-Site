@@ -15,9 +15,14 @@ class UrlsController < ApplicationController
 		render :home
 	end
 
+	# 1/3 chance of returning a 500 error
 	def down
-		render status: 500, json: {
-			message: "Internal Server Error"
-		}.to_json
+		if rand(1..3) == 2
+			render status: 500, json: {
+				message: "Internal Server Error"
+			}.to_json
+		else
+			render :home
+		end
 	end
 end
