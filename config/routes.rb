@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'urls#home'
+
+  get '/slow' => 'urls#slow'
+  get '/down' => 'urls#down'
 end
