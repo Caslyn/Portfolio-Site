@@ -17,7 +17,12 @@ class UrlsController < ApplicationController
 	end
 
 	def pass
-		private: true
+		expires_in 0.seconds, private: true
+		render :home
+	end
+
+	def cacheable
+		expires_in 1.day, public: true
 		render :home
 	end
 
