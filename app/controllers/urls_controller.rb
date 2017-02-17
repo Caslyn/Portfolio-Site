@@ -6,7 +6,7 @@ class UrlsController < ApplicationController
 	end
 
 	def home
-		expires_in 10.seconds, public: true
+		expires_in 1.day, public: true
 		render :home
 	end
 
@@ -16,10 +16,15 @@ class UrlsController < ApplicationController
 		render :home
 	end
 
-	# 1/3 chance of returning a 500 error
+	def pass
+		private: true
+		render :home
+	end
+
+	# 1/2 chance of returning a 500 error
 	def down
 		expires_in 3.seconds, public: true
-		if rand(1..3) == 2
+		if rand(1..2) == 2
 			render status: 500, json: {
 				message: "Internal Server Error"
 			}.to_json

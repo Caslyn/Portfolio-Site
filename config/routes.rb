@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get '/slow' => 'urls#slow'
   get '/down' => 'urls#down'
+  get '/pass' => 'urls#pass'
 end
