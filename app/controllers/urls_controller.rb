@@ -21,6 +21,11 @@ class UrlsController < ApplicationController
 		render :home
 	end
 
+	def short_ttl
+		expires_in 3.seconds, public: true
+		render :home
+	end
+
 	def cacheable
 		expires_in 1.day, public: true
 		render :home

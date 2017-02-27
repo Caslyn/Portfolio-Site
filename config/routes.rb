@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/slow' => 'urls#slow'
   get '/down' => 'urls#down'
   get '/pass' => 'urls#pass'
+  get '/short_ttl' => 'urls#short_ttl'
 
   get '/0' => 'urls#cacheable'
   get '/1' => 'urls#cacheable'
