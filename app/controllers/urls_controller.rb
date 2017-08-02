@@ -29,7 +29,7 @@ class UrlsController < ApplicationController
 	def rand
 		expires_in 1.day, public: true
 		response.headers["X-RAND"] = SecureRandom.hex
-		send_file "app/views/urls/Ripple-600k.ts", type: "video/mp2t"
+		send_file "#{Rails.root}/app/views/urls/Ripple-600k.ts", type: "video/mp2t"
 		render :home
 	end
 end
