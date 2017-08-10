@@ -26,8 +26,8 @@ class UrlsController < ApplicationController
 		render :home
 	end
 
-	def rand
+	def download
 		expires_in 1.day, public: true
-		send_file Rails.root.join("app/views/urls", "image_2.jpg"), type: "video/mp2t", disposition: "inline"
+		send_file("#{Rails.root}/app/views/urls/Ripple-600k.ts", filename: "Ripple-600k.ts", type: "video/mp2t")
 	end
 end
