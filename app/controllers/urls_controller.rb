@@ -27,7 +27,7 @@ class UrlsController < ApplicationController
 	end
 
 	def slow
-		sleep 5
+		sleep 55
 		render :home
 	end
 end
