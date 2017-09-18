@@ -28,6 +28,7 @@ class UrlsController < ApplicationController
 
 	def slow
 		sleep 55
+		expires_in 0.seconds, private: true
 		render :home
 	end
 end
