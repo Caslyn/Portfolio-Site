@@ -26,8 +26,8 @@ class UrlsController < ApplicationController
 		render :home
 	end
 
-	def download
-		expires_in 1.day, public: true
-		send_file("#{Rails.root}/app/views/urls/Ripple-600k.ts", filename: "Ripple-600k.ts", type: "video/mp2t")
+	def slow
+		sleep 5
+		render :home
 	end
 end
