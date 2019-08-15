@@ -1,4 +1,5 @@
 class UrlsController < ApplicationController
+	skip_before_filter :verify_authenticity_token
 	before_action :clear_cookies, :log_headers
 
 	def log_headers
